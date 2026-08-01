@@ -29,6 +29,7 @@ categories = ["development-tools::debugging"]
 # Dependencies
 # https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
 [dependencies]
+log = { version = "~0.4", features = ["std"] }
 
 # Development dependencies
 # https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#development-dependencies
