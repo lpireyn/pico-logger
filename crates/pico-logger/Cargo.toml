@@ -1,0 +1,39 @@
+# Cargo package manifest
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# Inherit workspace lints
+lints.workspace = true
+
+# Package configuration
+# https://doc.rust-lang.org/cargo/reference/manifest.html#the-package-section
+[package]
+name = "pico-logger"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "TBD: Crate description"
+documentation = "https://github.com/lpireyn/pico-logger"
+readme.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license.workspace = true
+keywords = ["logger"]
+# https://crates.io/category_slugs
+categories = ["development-tools::debugging"]
+
+# Library configuration
+# https://doc.rust-lang.org/cargo/reference/cargo-targets.html#library
+[lib]
+
+# Dependencies
+# https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
+[dependencies]
+
+# Development dependencies
+# https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#development-dependencies
+[dev-dependencies]
+
+# Build dependencies
+# https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#build-dependencies
+[build-dependencies]

@@ -1,0 +1,60 @@
+# Cargo workspace manifest
+# https://doc.rust-lang.org/cargo/reference/workspaces.html
+
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+# Inheritable package configuration
+# https://doc.rust-lang.org/cargo/reference/workspaces.html#the-package-table
+[workspace.package]
+version = "0.1.0"
+authors = ["Laurent Pireyn"]
+edition = "2024"
+rust-version = "1.95.0"
+readme = true
+homepage = "https://github.com/lpireyn/pico-logger"
+repository = "https://github.com/lpireyn/pico-logger"
+license = "MIT OR Apache-2.0"
+
+# Inheritable dependencies
+# https://doc.rust-lang.org/cargo/reference/workspaces.html#the-dependencies-table
+[workspace.dependencies]
+pico-logger = { path = "crates/pico-logger" }
+
+# Lints
+# https://doc.rust-lang.org/cargo/reference/manifest.html#the-lints-section
+
+# Clippy lints
+# https://rust-lang.github.io/rust-clippy/stable/index.html
+[workspace.lints.clippy]
+correctness = "warn"
+suspicious = "warn"
+complexity = "warn"
+perf = "warn"
+style = "warn"
+pedantic = "warn"
+cargo = "warn"
+
+# Profiles
+# https://doc.rust-lang.org/cargo/reference/profiles.html
+
+# Development profile
+# https://doc.rust-lang.org/cargo/reference/profiles.html#dev
+[profile.dev]
+
+# Release profile
+# https://doc.rust-lang.org/cargo/reference/profiles.html#release
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"
+
+# Test profile
+# https://doc.rust-lang.org/cargo/reference/profiles.html#test
+[profile.test]
+
+# Benchmark profile
+# https://doc.rust-lang.org/cargo/reference/profiles.html#bench
+[profile.bench]

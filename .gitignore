@@ -1,0 +1,9 @@
+# Git ignored paths
+# https://git-scm.com/docs/gitignore
+
+# Cargo generated files
+/target/
+
+# Cargo lock file
+# https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
+/Cargo.lock
