@@ -26,10 +26,14 @@ categories = ["development-tools::debugging"]
 # https://doc.rust-lang.org/cargo/reference/cargo-targets.html#library
 [lib]
 
+[features]
+color = ["dep:owo-colors"]
+
 # Dependencies
 # https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
 [dependencies]
 log = { version = "~0.4", features = ["std"] }
+owo-colors = { version = "~4.3", features = ["supports-colors"], optional = true }
 
 # Development dependencies
 # https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#development-dependencies

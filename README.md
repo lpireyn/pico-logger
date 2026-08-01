@@ -16,6 +16,9 @@ A minuscule Rust logger.
 *Pico Logger* is an implementation of the [`Log`](https://docs.rs/log/latest/log/trait.Log.html) trait that simply prints the log messages to stderr.
 The only configurable element is the maximum log level.
 
+Pico Logger optionally supports colors if the `color` feature is enabled and stderr supports colors.
+The colors themselves are not configurable.
+
 ## Changelog
 
 See [`CHANGELOG.md`](CHANGELOG.md).
