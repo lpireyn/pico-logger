@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine rustup version
+        id: rustup-version
+        run: |
+          rustup_version="$(rustup --version)"
+          echo "$rustup_version"
+          echo "version=$rustup_version" >> "$GITHUB_OUTPUT"
+      - name: Cache rustup files
+        uses: actions/cache@v6
+        with:
+          path: ~/.rustup
+          key: ${{ runner.os }}-rustup-${{ steps.rustup-version.outputs.version }}
+          restore-keys: ${{ runner.os }}-rustup
+      - name: Cache Cargo files
+        uses: actions/cache@v6
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/git/db/
+            ~/.cargo/registry/cache/
+            ~/.cargo/registry/index/
+            target/
+          key: ${{ runner.os }}-cargo-${{ steps.rustup-version.outputs.version }}
+          restore-keys: ${{ runner.os }}-cargo
+      - name: Checkout project
+        uses: actions/checkout@v6
+      - name: Build workspace
+        run: cargo build --workspace --all-targets --verbose
+      - name: Run tests
+        run: cargo test --workspace --all-targets --verbose
+      - name: Run doctests
+        run: cargo test --workspace --doc --verbose
+      - name: Check code with Clippy
+        run: cargo clippy --workspace --all-targets --no-deps --verbose
+      - name: Check code format
+        run: |
+          rustup component add --toolchain nightly rustfmt
+          cargo +nightly fmt --check --all --verbose
