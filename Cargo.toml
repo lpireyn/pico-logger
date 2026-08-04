@@ -9,7 +9,7 @@ resolver = "3"
 # https://doc.rust-lang.org/cargo/reference/workspaces.html#the-package-table
 [workspace.package]
 version = "0.1.0"
-authors = ["Laurent Pireyn"]
+authors = ["Laurent Pireyn <laurent@pireyn.be>"]
 edition = "2024"
 rust-version = "1.95.0"
 readme = true
