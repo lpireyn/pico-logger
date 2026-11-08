@@ -3,11 +3,6 @@
 A minuscule Rust logger.
 
 [![GitHub Release](https://img.shields.io/github/v/release/lpireyn/pico-logger)](https://github.com/lpireyn/pico-logger/releases)
-[![GitHub Stars](https://img.shields.io/github/stars/lpireyn/pico-logger)](https://github.com/lpireyn/pico-logger)
-[![GitHub Watchers](https://img.shields.io/github/watchers/lpireyn/pico-logger)](https://github.com/lpireyn/pico-logger)
-[![GitHub Forks](https://img.shields.io/github/forks/lpireyn/pico-logger)](https://github.com/lpireyn/pico-logger)
-[![GitHub Repository Size](https://img.shields.io/github/repo-size/lpireyn/pico-logger)](https://github.com/lpireyn/pico-logger)
-[![GitHub Downloads](https://img.shields.io/github/downloads/lpireyn/pico-logger/total)](https://github.com/lpireyn/pico-logger/releases)
 [![GitHub Issues](https://img.shields.io/github/issues/lpireyn/pico-logger)](https://github.com/lpireyn/pico-logger/issues)
 [![Common Changelog](https://common-changelog.org/badge.svg)](https://common-changelog.org)
 [![MIT](https://img.shields.io/badge/license-MIT-green)](https://mit-license.org/)
